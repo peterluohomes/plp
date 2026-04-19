@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule A1 – Agreement of Purchase and Sale</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --gold: #c9a84c;
+    --gold-light: #e8d5a3;
+    --cream: #fdfaf4;
+    --text: #2c2c2c;
+    --text-light: #555;
+    --border: #d4c9a8;
+    --section-bg: #f5f0e8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 48px 56px;
+  }
+
+  /* Header */
+  .form-header {
+    border-bottom: 3px double var(--gold);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+  }
+
+  .form-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .form-number {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .form-subtitle {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+  }
+
+  .schedule-badge {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border: 2px solid var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  /* Party fields */
+  .party-section {
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+
+  .field-row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+
+  .field-label {
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    min-width: 80px;
+  }
+
+  .field-line {
+    flex: 1;
+    border-bottom: 1px solid var(--text-light);
+    min-height: 22px;
+  }
+
+  .field-row-inline {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  /* Clauses */
+  .clauses-section {
+    margin-top: 20px;
+  }
+
+  .clauses-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--gold-light);
+  }
+
+  .clause {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-left: 3px solid var(--gold-light);
+    background: #fefefe;
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--text);
+  }
+
+  .clause:hover {
+    border-left-color: var(--gold);
+    background: #fffdf7;
+  }
+
+  .clause-highlight {
+    border-left-color: var(--navy);
+    background: #f8f9fc;
+  }
+
+  /* Initials bar */
+  .initials-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 28px 0 20px;
+    padding: 12px 20px;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .initials-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .initials-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-light);
+  }
+
+  .initials-line {
+    width: 100px;
+    border-bottom: 1px solid var(--gold);
+    height: 20px;
+  }
+
+  /* Footer */
+  .form-footer {
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 10px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  /* Page break simulation */
+  .page-break {
+    border-top: 2px dashed var(--border);
+    margin: 40px 0 32px;
+    position: relative;
+  }
+
+  .page-break::after {
+    content: 'Page 2';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0 12px;
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; border: none; }
+    .page-break { page-break-before: always; border: none; }
+    .page-break::after { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 24px 20px; margin: 0; }
+    .initials-bar { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- PAGE 1 HEADER -->
+  <div class="form-header">
+    <div class="form-header-top">
+      <span class="form-number">Form 105 Revised 2023 &nbsp;|&nbsp; Page 1 of 2</span>
+      <div class="schedule-badge">A1</div>
+    </div>
+    <div class="form-title">Schedule A1</div>
+    <div class="form-subtitle">Agreement of Purchase and Sale – Form 105 &nbsp;|&nbsp; For use in the Province of Ontario</div>
+  </div>
+
+  <p style="font-size:12px; color:var(--text-light); margin-bottom:16px;">
+    This Schedule is attached to and forms part of the Agreement of Purchase and Sale between:
+  </p>
+
+  <!-- PARTY FIELDS -->
+  <div class="party-section">
+    <div class="field-row">
+      <span class="field-label">Buyer:</span>
+      <div class="field-line"></div>
+    </div>
+    <div class="field-row">
+      <span class="field-label">Seller:</span>
+      <div class="field-line"></div>
+    </div>
+    <div class="field-row">
+      <span class="field-label">Property:</span>
+      <div class="field-line"></div>
+    </div>
+    <div class="field-row-inline" style="margin-top:4px; font-size:12px; color:var(--text-light);">
+      <span>Dated the</span>
+      <div style="border-bottom:1px solid #999; width:60px; height:18px;"></div>
+      <span>day of</span>
+      <div style="border-bottom:1px solid #999; width:100px; height:18px;"></div>
+      <span>, 20</span>
+      <div style="border-bottom:1px solid #999; width:40px; height:18px;"></div>
+    </div>
+  </div>
+
+  <!-- INITIALS BAR -->
+  <div class="initials-bar">
+    <div class="initials-box">
+      <span class="initials-label">Initials of Buyer(s)</span>
+      <div class="initials-line"></div>
+    </div>
+    <div style="color:var(--gold); font-family:'Playfair Display',serif; font-size:13px;">This form must be initialled by all parties</div>
+    <div class="initials-box">
+      <span class="initials-label">Initials of Seller(s)</span>
+      <div class="initials-line"></div>
+    </div>
+  </div>
+
+  <!-- CLAUSES PAGE 1 -->
+  <div class="clauses-section">
+    <div class="clauses-title">Terms &amp; Conditions</div>
+
+    <div class="clause">
+      The Buyer hereby acknowledge and agree to deliver the Deposit as mentioned in this Agreement of Purchase and Sale by certified cheque, money order or bank draft to the Deposit Holder within 24 hours of the time stated in the "Confirmation of Acceptance" section of this Agreement of Purchase and Sale. <strong>TIME IS OF THE ESSENCE</strong> with respect to this obligation. In the event that the Deposit Holder does not receive the said Deposit within this period, the Seller may, at their sole and absolute discretion, declare this Agreement terminated due to Buyer's default. Upon such termination, the Seller shall be at liberty to immediately re-list the property for sale and to accept another offer, and the Seller reserves all rights to pursue any and all legal remedies against the Buyer, including, but not limited to, a claim for damages.
+    </div>
+
+    <div class="clause">
+      If conditions are not waived in writing by <strong>[date/time]</strong>, the Seller may, at their sole and absolute discretion, declare this Agreement null and void.
+    </div>
+
+    <div class="clause">
+      Notwithstanding any other provision of this Agreement, the Buyer(s) shall ensure that the balance of the purchase price, subject to adjustments, is paid on the date of completion by certified cheque, bank draft, or wire transfer drawn on or issued from the trust account of the Buyer's solicitor, made payable to the Seller's solicitor in trust. The Buyer(s) shall instruct their solicitor to arrange such payment directly from the solicitor's trust account.
+    </div>
+
+    <div class="clause">
+      The Seller reserves the right to continue to offer the property for sale and accept backup offers until all conditions have been waived or fulfilled.
+    </div>
+
+    <div class="clause">
+      The Buyer shall not assign this Agreement without the prior written consent of the Seller.
+    </div>
+
+    <div class="clause">
+      The Seller(s) and Buyer acknowledge and agree that there is no express or implied warranty on the condition of the chattels which are included in this Agreement of Purchase and Sale.
+    </div>
+
+    <div class="clause clause-highlight">
+      All parties acknowledge and agree that notwithstanding the completion date set out in this offer, the Seller(s) has the right to advance or postpone the completion date of the transaction by not more than 60 days once, by giving written notice of the amended completion date to the Buyer or his solicitor at least 30 days in advance of the earlier of the completion date set out therein and the amended completion date. All parties also acknowledge and agree that the Title Search Date will be changed to 10 business days before the amended completion date; provided that if such date falls on a weekend or a statutory holiday in the Province of Ontario, the Title Search Date shall be the next preceding business day that is not a weekend or statutory holiday.
+    </div>
+
+    <div class="clause">
+      The Buyer represents and warrants that, as of the date of this Agreement, the Buyer is purchasing the property for the Buyer's own personal use and occupancy, and not as inventory or in the course of a business, and that HST does not apply to this transaction.
+    </div>
+
+    <div class="clause">
+      The Buyer acknowledges that the Seller shall not be obligated to remedy any title objections and the Buyer's sole remedy shall be to terminate this Agreement.
+    </div>
+  </div>
+
+  <div class="form-footer">
+    © 2026, Ontario Real Estate Association ("OREA"). All rights reserved. This form was developed by OREA for the use and reproduction by its members and licensees only. Any other use or reproduction is prohibited except with prior written consent of OREA. Do not alter when printing or reproducing the standard pre-set portion. OREA bears no liability for your use of this form.<br>
+    The trademarks REALTOR®, REALTORS®, MLS®, Multiple Listing Services® and associated logos are owned or controlled by The Canadian Real Estate Association (CREA) and identify the real estate professionals who are members of CREA and the quality of services they provide. Used under license.
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page-break"></div>
+
+  <!-- PAGE 2 HEADER -->
+  <div class="form-header">
+    <div class="form-header-top">
+      <span class="form-number">Form 105 Revised 2023 &nbsp;|&nbsp; Page 2 of 2</span>
+      <div class="schedule-badge">A1</div>
+    </div>
+    <div class="form-title">Schedule A1 (continued)</div>
+    <div class="form-subtitle">Agreement of Purchase and Sale – Form 105 &nbsp;|&nbsp; For use in the Province of Ontario</div>
+  </div>
+
+  <p style="font-size:12px; color:var(--text-light); margin-bottom:16px;">
+    This Schedule is attached to and forms part of the Agreement of Purchase and Sale between:
+  </p>
+
+  <div class="party-section">
+    <div class="field-row">
+      <span class="field-label">Buyer:</span>
+      <div class="field-line"></div>
+    </div>
+    <div class="field-row">
+      <span class="field-label">Seller:</span>
+      <div class="field-line"></div>
+    </div>
+    <div class="field-row">
+      <span class="field-label">Property:</span>
+      <div class="field-line"></div>
+    </div>
+    <div class="field-row-inline" style="margin-top:4px; font-size:12px; color:var(--text-light);">
+      <span>Dated the</span>
+      <div style="border-bottom:1px solid #999; width:60px; height:18px;"></div>
+      <span>day of</span>
+      <div style="border-bottom:1px solid #999; width:100px; height:18px;"></div>
+      <span>, 20</span>
+      <div style="border-bottom:1px solid #999; width:40px; height:18px;"></div>
+    </div>
+  </div>
+
+  <div class="initials-bar">
+    <div class="initials-box">
+      <span class="initials-label">Initials of Buyer(s)</span>
+      <div class="initials-line"></div>
+    </div>
+    <div style="color:var(--gold); font-family:'Playfair Display',serif; font-size:13px;">This form must be initialled by all parties</div>
+    <div class="initials-box">
+      <span class="initials-label">Initials of Seller(s)</span>
+      <div class="initials-line"></div>
+    </div>
+  </div>
+
+  <!-- CLAUSES PAGE 2 -->
+  <div class="clauses-section">
+
+    <div class="clause">
+      The Buyer acknowledges having been advised to seek independent legal advice prior to executing this Agreement.
+    </div>
+
+    <div class="clause">
+      In the event the Buyer fails to complete this transaction for any reason not permitted by this Agreement, the deposit paid shall be forfeited to the Seller as liquidated damages and not as a penalty, without prejudice to the Seller's right to pursue any other remedies available at law or in equity, including but not limited to a claim for damages.
+    </div>
+
+    <div class="clause">
+      The Buyer and the Buyer's agents, inspectors, and contractors shall not access the property without the prior written consent of the Seller or the Listing Brokerage. The Buyer shall be responsible for and shall indemnify the Seller against any loss, damage, or liability arising from any entry upon the property by the Buyer or any person authorized by the Buyer, and shall restore the property to its original condition following any inspection or test.
+    </div>
+
+    <div class="clause">
+      The Buyer's representations and warranties contained in this Agreement, including but not limited to those relating to the Buyer's intended use of the property and the applicability of Harmonized Sales Tax (HST), shall survive and not merge upon the completion of this transaction, and shall continue in full force and effect following the closing date.
+    </div>
+
+    <div class="clause">
+      Once any condition set out in this Agreement has been waived in writing by the party for whose benefit the condition was included, such waiver shall be final and irrevocable and shall not be withdrawn or revoked by such party.
+    </div>
+
+    <div class="clause">
+      The Buyer shall make a bona fide application for financing within two (2) business days of acceptance of this Agreement and shall pursue such application diligently and in good faith. The Buyer shall provide the Seller, upon request, with reasonable evidence that a financing application has been submitted. The Buyer shall not deliberately frustrate or fail to pursue the fulfillment of the financing condition.
+    </div>
+
+    <div class="clause">
+      Notwithstanding any other provision of this Agreement, if the Buyer provides written notice of any deficiency, defect, or objection which would otherwise entitle the Buyer to terminate this Agreement, the Seller shall have five (5) business days from receipt of such notice to remedy, cure, or satisfy the deficiency, defect, or objection. If the Seller remedies, cures, or satisfies the deficiency, defect, or objection within such period, the Buyer shall not be entitled to terminate this Agreement on the basis of such deficiency, defect, or objection.
+    </div>
+
+    <div class="clause">
+      The Seller makes no representation or warranty that any improvements, renovations, alterations, or additions to the property were made in compliance with applicable building codes, by-laws, or that the necessary permits were obtained. The Buyer acknowledges that it is the Buyer's sole responsibility to verify permit history and compliance with all applicable municipal requirements at the Buyer's own expense prior to the waiver of conditions.
+    </div>
+
+  </div>
+
+  <div class="form-footer">
+    © 2026, Ontario Real Estate Association ("OREA"). All rights reserved. This form was developed by OREA for the use and reproduction by its members and licensees only. Any other use or reproduction is prohibited except with prior written consent of OREA. Do not alter when printing or reproducing the standard pre-set portion. OREA bears no liability for your use of this form.<br>
+    The trademarks REALTOR®, REALTORS®, MLS®, Multiple Listing Services® and associated logos are owned or controlled by The Canadian Real Estate Association (CREA) and identify the real estate professionals who are members of CREA and the quality of services they provide. Used under license.
+  </div>
+
+</div>
+</body>
+</html>
