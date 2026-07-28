@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early Packing Guide | Pre-Listing Preparation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1f3c;
+    --navy-mid: #152b52;
+    --navy-light: #1e3a6e;
+    --gold: #c9a84c;
+    --gold-light: #e0c070;
+    --gold-pale: #f5e9c8;
+    --cream: #fdf8f0;
+    --cream-dark: #f0e8d5;
+    --white: #ffffff;
+    --text-dark: #1a1a2e;
+    --text-mid: #3d3d5c;
+    --text-light: #8888aa;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 45vh;
+    background-color: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px 70px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 20% 20%, rgba(30,58,110,0.8) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-accent {
+    position: absolute; top: 0; right: 0; width: 400px; height: 400px;
+    background: linear-gradient(135deg, transparent 50%, rgba(201,168,76,0.08) 50%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 780px; }
+  .badge {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 6px 18px; margin-bottom: 36px;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: -1px;
+  }
+  .hero-name span { color: var(--gold); font-style: italic; }
+  .hero-divider {
+    width: 60px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 24px auto;
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 22px); font-weight: 300; font-style: italic;
+    color: rgba(255,255,255,0.75); line-height: 1.5; margin-top: 4px;
+  }
+
+  /* INTRO STRIP */
+  .intro-strip { background: var(--gold); padding: 14px 40px; text-align: center; }
+  .intro-strip p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--navy);
+  }
+
+  /* SECTION BASE */
+  section { padding: 70px 24px; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px; font-weight: 600; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 24px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-body {
+    font-size: 17px; font-weight: 300; line-height: 1.8; color: var(--text-mid); max-width: 640px;
+  }
+
+  /* GOLDEN RULE */
+  .golden-rule {
+    background: var(--navy);
+    padding: 40px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .golden-rule::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 70%);
+  }
+  .golden-rule .container { position: relative; z-index: 1; }
+  .golden-rule h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--gold); font-weight: 700; margin-bottom: 12px;
+  }
+  .golden-rule p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; color: rgba(255,255,255,0.7);
+    font-style: italic; line-height: 1.6;
+  }
+
+  /* CHECKBOX GRID */
+  .packing-section { background: var(--cream); }
+  .room-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .room-card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    padding: 28px;
+    position: relative;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .room-card:hover {
+    box-shadow: 0 8px 30px rgba(13,31,60,0.08);
+    transform: translateY(-2px);
+  }
+  .room-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 3px;
+    background: var(--gold);
+  }
+  .room-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 600;
+    color: var(--navy); margin-bottom: 18px;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .check-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px; height: 18px;
+    border: 1.5px solid var(--text-light);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s ease;
+  }
+  .check-item input[type="checkbox"]:checked {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+  .check-item input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px; top: 1px;
+    width: 5px; height: 10px;
+    border: solid var(--navy);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .check-item input[type="checkbox"]:focus {
+    outline: 2px solid rgba(201,168,76,0.4);
+    outline-offset: 2px;
+  }
+  .check-item span {
+    font-size: 15px; color: var(--text-mid);
+    line-height: 1.5;
+    transition: color 0.15s ease;
+  }
+  .check-item input[type="checkbox"]:checked + span {
+    color: var(--text-dark);
+    text-decoration: line-through;
+    text-decoration-color: var(--gold);
+    text-decoration-thickness: 1px;
+  }
+  .check-item:hover span { color: var(--text-dark); }
+
+  .note-box {
+    background: rgba(201,168,76,0.08);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    margin-top: 36px;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  /* WHERE TO PUT BOXES */
+  .storage-section { background: var(--cream-dark); }
+  .storage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .storage-card {
+    background: var(--white);
+    padding: 28px;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+  }
+  .storage-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 600;
+    color: var(--navy); margin-bottom: 10px;
+  }
+  .storage-card p {
+    font-size: 14px; color: var(--text-mid);
+    line-height: 1.7; font-weight: 300;
+  }
+
+  /* WHAT STAYS OUT */
+  .stays-section { background: var(--navy); position: relative; overflow: hidden; }
+  .stays-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 0% 100%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size: auto, 80px 80px, 80px 80px;
+  }
+  .stays-section .container { position: relative; z-index: 1; }
+  .stays-section .section-title { color: var(--white); }
+  .stays-section .section-body { color: rgba(255,255,255,0.65); }
+  .stays-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .stay-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+  .stay-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .stay-item p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* OFF-LIMITS */
+  .offlimits-section { background: var(--cream); }
+  .offlimits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 36px;
+  }
+  .offlimits-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+  }
+  .offlimits-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px; height: 18px;
+    border: 1.5px solid var(--text-light);
+    border-radius: 3px;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s ease;
+  }
+  .offlimits-item input[type="checkbox"]:checked {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+  .offlimits-item input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px; top: 1px;
+    width: 5px; height: 10px;
+    border: solid var(--navy);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .offlimits-item span {
+    font-size: 15px; color: var(--text-mid);
+  }
+  .offlimits-other {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .offlimits-other input[type="text"] {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid var(--cream-dark);
+    background: transparent;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--text-dark);
+    padding: 4px 0;
+    outline: none;
+  }
+  .offlimits-other input[type="text"]:focus {
+    border-bottom-color: var(--gold);
+  }
+
+  /* TIMELINE */
+  .timeline-section { background: var(--cream-dark); }
+  .timeline {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 18px; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
+  }
+  .timeline-item {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(13,31,60,0.08);
+    padding-left: 56px;
+    position: relative;
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-dot {
+    position: absolute;
+    left: 12px; top: 26px;
+    width: 22px; height: 22px;
+    background: var(--navy);
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .timeline-phase {
+    flex-shrink: 0;
+    width: 120px;
+  }
+  .phase-tag {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold);
+    background: rgba(201,168,76,0.12); padding: 4px 10px;
+    display: inline-block;
+  }
+  .timeline-content strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--navy); display: block; margin-bottom: 6px;
+  }
+  .timeline-content p {
+    font-size: 14px; color: var(--text-mid);
+    line-height: 1.7; font-weight: 300;
+  }
+
+  /* PRO TIPS */
+  .tips-section { background: var(--white); }
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .tip-card {
+    background: var(--cream);
+    padding: 24px;
+    border-left: 3px solid var(--gold);
+  }
+  .tip-card strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-weight: 600;
+    color: var(--navy); display: block; margin-bottom: 8px;
+  }
+  .tip-card p {
+    font-size: 14px; color: var(--text-mid);
+    line-height: 1.7; font-weight: 300;
+  }
+
+  /* MASTER CHECKLIST */
+  .checklist-section { background: var(--navy); position: relative; overflow: hidden; }
+  .checklist-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 70%);
+  }
+  .checklist-section .container { position: relative; z-index: 1; }
+  .checklist-section .section-title { color: var(--white); }
+  .master-checklist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+  }
+  .master-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+  .master-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px; height: 18px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 3px;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s ease;
+  }
+  .master-item input[type="checkbox"]:checked {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+  .master-item input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px; top: 1px;
+    width: 5px; height: 10px;
+    border: solid var(--navy);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .master-item span {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    transition: color 0.15s ease;
+  }
+  .master-item input[type="checkbox"]:checked + span {
+    color: rgba(255,255,255,0.4);
+    text-decoration: line-through;
+    text-decoration-color: var(--gold);
+    text-decoration-thickness: 1px;
+  }
+
+  /* FOOTER */
+  footer { background: #060e1a; padding: 30px 24px; text-align: center; }
+  footer p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(255,255,255,0.2);
+  }
+  footer .legal {
+    margin-top: 10px;
+    font-size: 9px; letter-spacing: 1px;
+    color: rgba(255,255,255,0.15);
+    text-transform: none;
+    max-width: 640px;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.6;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .room-grid, .stays-grid, .tips-grid, .master-checklist, .offlimits-grid { grid-template-columns: 1fr; }
+    .storage-grid { grid-template-columns: 1fr; }
+    .timeline::before { left: 14px; }
+    .timeline-dot { left: 8px; }
+    .timeline-item { padding-left: 46px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="badge">Pre-Listing Preparation</div>
+    <h1 class="hero-name">The Early <span>Packing</span> Guide</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Before your home hits the market — a room-by-room checklist to help buyers fall in love with the space, not the stuff.</p>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="intro-strip">
+  <p>Pack Early &nbsp;&middot;&nbsp; Photograph Better &nbsp;&middot;&nbsp; Sell Stronger</p>
+</div>
+
+<!-- GOLDEN RULE -->
+<section class="golden-rule">
+  <div class="container">
+    <h2>The Golden Rule</h2>
+    <p>If it's in a box, it's not in the photo. Buyers open every closet and cabinet. Packing early makes rooms feel larger, photos look sharper, and showings feel effortless. You don't need to empty the house — just remove 30–40% of what's visible so buyers see space, not stuff.</p>
+  </div>
+</section>
+
+<!-- PACKING CHECKLIST -->
+<section class="packing-section">
+  <div class="container">
+    <p class="section-label">Room by Room</p>
+    <h2 class="section-title">What to <em>Pack Now</em></h2>
+    <div class="section-body">
+      <p>Think of it as getting a head start on your actual move — because you're going to pack it all eventually anyway. Click each item as you complete it.</p>
+    </div>
+
+    <div class="room-grid">
+      <div class="room-card">
+        <h3>Closets & Bedrooms</h3>
+        <label class="check-item"><input type="checkbox"><span>Off-season clothes and shoes</span></label>
+        <label class="check-item"><input type="checkbox"><span>Extra linens, blankets, towels</span></label>
+        <label class="check-item"><input type="checkbox"><span>Books, DVDs, board games</span></label>
+        <label class="check-item"><input type="checkbox"><span>Toys (keep favorites, store rest)</span></label>
+        <label class="check-item"><input type="checkbox"><span>Under-bed storage items</span></label>
+        <label class="check-item"><input type="checkbox"><span>Items on nightstands and dressers</span></label>
+      </div>
+      <div class="room-card">
+        <h3>Kitchen</h3>
+        <label class="check-item"><input type="checkbox"><span>Small appliances you won't use</span></label>
+        <label class="check-item"><input type="checkbox"><span>Extra dishes, serving platters</span></label>
+        <label class="check-item"><input type="checkbox"><span>Pantry overflow and bulk items</span></label>
+        <label class="check-item"><input type="checkbox"><span>Refrigerator magnets and notes</span></label>
+        <label class="check-item"><input type="checkbox"><span>Pet supplies (keep daily essentials)</span></label>
+        <label class="check-item"><input type="checkbox"><span>Items on top of cabinets</span></label>
+      </div>
+      <div class="room-card">
+        <h3>Living & Dining</h3>
+        <label class="check-item"><input type="checkbox"><span>Extra chairs or side tables</span></label>
+        <label class="check-item"><input type="checkbox"><span>Media collections and cables</span></label>
+        <label class="check-item"><input type="checkbox"><span>Throw pillows and extra blankets</span></label>
+        <label class="check-item"><input type="checkbox"><span>Personal photos and diplomas*</span></label>
+        <label class="check-item"><input type="checkbox"><span>Decorative items that crowd surfaces</span></label>
+        <label class="check-item"><input type="checkbox"><span>Anything that blocks natural light</span></label>
+      </div>
+      <div class="room-card">
+        <h3>Bathrooms</h3>
+        <label class="check-item"><input type="checkbox"><span>Countertop toiletries (keep 2–3)</span></label>
+        <label class="check-item"><input type="checkbox"><span>Extra towels (keep two sets)</span></label>
+        <label class="check-item"><input type="checkbox"><span>Cleaning supplies under sink</span></label>
+        <label class="check-item"><input type="checkbox"><span>Bath toys and non-essentials</span></label>
+        <label class="check-item"><input type="checkbox"><span>Hair tools and appliances</span></label>
+        <label class="check-item"><input type="checkbox"><span>Rugs and shower curtains if worn</span></label>
+      </div>
+      <div class="room-card">
+        <h3>Basement & Garage</h3>
+        <label class="check-item"><input type="checkbox"><span>Holiday decorations</span></label>
+        <label class="check-item"><input type="checkbox"><span>Sports equipment and tools</span></label>
+        <label class="check-item"><input type="checkbox"><span>Boxes already in storage</span></label>
+        <label class="check-item"><input type="checkbox"><span>Extra furniture and rugs</span></label>
+        <label class="check-item"><input type="checkbox"><span>Paint cans and supplies</span></label>
+        <label class="check-item"><input type="checkbox"><span>Anything that doesn't "have a job"</span></label>
+      </div>
+      <div class="room-card">
+        <h3>Personal Items</h3>
+        <label class="check-item"><input type="checkbox"><span>Family photos and albums</span></label>
+        <label class="check-item"><input type="checkbox"><span>Religious or cultural items*</span></label>
+        <label class="check-item"><input type="checkbox"><span>Diplomas, certificates, trophies</span></label>
+        <label class="check-item"><input type="checkbox"><span>Valuables and jewelry</span></label>
+        <label class="check-item"><input type="checkbox"><span>Medications (store securely)</span></label>
+        <label class="check-item"><input type="checkbox"><span>Mail and personal documents</span></label>
+      </div>
+    </div>
+
+    <div class="note-box">
+      * If you'd like certain personal items featured in photos, just let us know. Otherwise, they should be stored.
+    </div>
+  </div>
+</section>
+
+<!-- STORAGE -->
+<section class="storage-section">
+  <div class="container">
+    <p class="section-label">Logistics</p>
+    <h2 class="section-title">Where to Put <em>the Boxes</em></h2>
+    <div class="section-body">
+      <p>You don't need a storage unit — though one is ideal. A neatly stacked corner of the basement, garage bay, or spare room works perfectly. The only rule: boxes must be out of photos and out of the path buyers walk.</p>
+    </div>
+    <div class="storage-grid">
+      <div class="storage-card">
+        <h4>Storage Unit</h4>
+        <p>Best option. Clean, out of sight, and your boxes are already packed for moving day.</p>
+      </div>
+      <div class="storage-card">
+        <h4>Garage / Basement Corner</h4>
+        <p>Fine if stacked neatly and labeled. Keep away from mechanicals and furnace areas.</p>
+      </div>
+      <div class="storage-card">
+        <h4>PODS / Portable Storage</h4>
+        <p>Popular middle ground. Sits in the driveway during prep, picked up on closing day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT STAYS OUT -->
+<section class="stays-section">
+  <div class="container">
+    <p class="section-label">For Photos & Showings</p>
+    <h2 class="section-title">What to <em>Leave Out</em></h2>
+    <div class="section-body">
+      <p>These are the finishing touches that make buyers fall in love. Less is more — but the right "more" sells.</p>
+    </div>
+    <div class="stays-grid">
+      <div class="stay-item">
+        <span class="stay-icon">&#127807;</span>
+        <p>Fresh flowers or a living plant on the kitchen island</p>
+      </div>
+      <div class="stay-item">
+        <span class="stay-icon">&#127818;</span>
+        <p>A bowl of lemons or seasonal fruit on the counter</p>
+      </div>
+      <div class="stay-item">
+        <span class="stay-icon">&#128214;</span>
+        <p>One quality coffee table book per surface</p>
+      </div>
+      <div class="stay-item">
+        <span class="stay-icon">&#128719;</span>
+        <p>Clean, neutral bedding with two accent pillows</p>
+      </div>
+      <div class="stay-item">
+        <span class="stay-icon">&#128367;</span>
+        <p>A single scented candle (unlit for photos)</p>
+      </div>
+      <div class="stay-item">
+        <span class="stay-icon">&#129523;</span>
+        <p>Fresh white towels in each bathroom</p>
+      </div>
+      <div class="stay-item">
+        <span class="stay-icon">&#127912;</span>
+        <p>One piece of art per wall — nothing crowded</p>
+      </div>
+      <div class="stay-item">
+        <span class="stay-icon">&#127969;</span>
+        <p>A clean doormat and porch seating if space allows</p>
+      </div>
+      <div class="stay-item">
+        <span class="stay-icon">&#9728;</span>
+        <p>All blinds and curtains open for natural light</p>
+      </div>
+      <div class="stay-item">
+        <span class="stay-icon">&#129526;</span>
+        <p>A neutral area rug that defines the living space</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFF-LIMITS -->
+<section class="offlimits-section">
+  <div class="container">
+    <p class="section-label">Your Preferences</p>
+    <h2 class="section-title">Off-<em>Limits</em> List</h2>
+    <div class="section-body">
+      <p>Tell us now what should never be moved, touched, or staged. We'll plan around it completely.</p>
+    </div>
+    <div class="offlimits-grid">
+      <label class="offlimits-item"><input type="checkbox"><span>Religious or cultural items</span></label>
+      <label class="offlimits-item"><input type="checkbox"><span>Heirloom furniture or artwork</span></label>
+      <label class="offlimits-item"><input type="checkbox"><span>Home office equipment / setup</span></label>
+      <label class="offlimits-item"><input type="checkbox"><span>Kids' rooms during school term</span></label>
+      <label class="offlimits-item"><input type="checkbox"><span>Pet areas and feeding stations</span></label>
+      <label class="offlimits-item"><input type="checkbox"><span>Specific rooms to leave as-is</span></label>
+      <div class="offlimits-item offlimits-other">
+        <input type="checkbox">
+        <input type="text" placeholder="Other: type here...">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <p class="section-label">Your Schedule</p>
+    <h2 class="section-title">Pre-Listing <em>Timeline</em></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><span class="phase-tag">Today</span></div>
+        <div class="timeline-content">
+          <strong>Start Packing Non-Essentials</strong>
+          <p>Begin with off-season clothes, books, decorations, and anything you won't miss in the next 30 days.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><span class="phase-tag">2 Weeks Before Photos</span></div>
+        <div class="timeline-content">
+          <strong>All Packing Complete</strong>
+          <p>Rooms cleared, closets at 60% capacity, counters 80% clear. Home should feel spacious.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><span class="phase-tag">1 Week Before Photos</span></div>
+        <div class="timeline-content">
+          <strong>Final Walkthrough</strong>
+          <p>Designer or stager visit (if applicable). Fine-tune what stays out for the camera.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><span class="phase-tag">Photo Day</span></div>
+        <div class="timeline-content">
+          <strong>Camera-Ready</strong>
+          <p>Lights on, blinds open, fresh flowers in place. Leave the house 30 minutes before the photographer arrives.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><span class="phase-tag">Listing Day</span></div>
+        <div class="timeline-content">
+          <strong>Showtime</strong>
+          <p>Temperature comfortable, music soft, home smelling fresh. Every showing is a first impression.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRO TIPS -->
+<section class="tips-section">
+  <div class="container">
+    <p class="section-label">Insider Knowledge</p>
+    <h2 class="section-title">Pro <em>Tips</em></h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <strong>Don't buy new stuff.</strong>
+        <p>You're moving. Use what you have — just less of it.</p>
+      </div>
+      <div class="tip-card">
+        <strong>Pack like you're moving, not like you're hiding.</strong>
+        <p>Buyers can smell desperation. Confidence sells.</p>
+      </div>
+      <div class="tip-card">
+        <strong>One box per room, max.</strong>
+        <p>If a room needs more than one box of clearing, it's not decluttering — it's staging.</p>
+      </div>
+      <div class="tip-card">
+        <strong>The fridge gets emptied.</strong>
+        <p>Of magnets, photos, and expired condiments. Clean shelves read as "well-maintained."</p>
+      </div>
+      <div class="tip-card">
+        <strong>Garbage cans disappear.</strong>
+        <p>For photos and showings, all trash and recycling bins go in the garage or a closet.</p>
+      </div>
+      <div class="tip-card">
+        <strong>Pet evidence vanishes.</strong>
+        <p>Beds, bowls, toys, and litter boxes out of sight. Not everyone loves your dog as much as you do.</p>
+      </div>
+      <div class="tip-card">
+        <strong>Smell sells.</strong>
+        <p>Bake cookies before a showing, or simmer cinnamon and citrus. Never cover odors with spray.</p>
+      </div>
+      <div class="tip-card">
+        <strong>Light is free.</strong>
+        <p>Open every blind, turn on every lamp, replace any bulb under 60 watts. Bright homes feel bigger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MASTER CHECKLIST -->
+<section class="checklist-section">
+  <div class="container">
+    <p class="section-label">Final Verification</p>
+    <h2 class="section-title">Quick <em>Checklist</em></h2>
+    <div class="master-checklist">
+      <label class="master-item"><input type="checkbox"><span>Closets cleared to 60% full</span></label>
+      <label class="master-item"><input type="checkbox"><span>Kitchen counters 80% clear</span></label>
+      <label class="master-item"><input type="checkbox"><span>Personal photos stored</span></label>
+      <label class="master-item"><input type="checkbox"><span>Bathrooms have fresh white towels</span></label>
+      <label class="master-item"><input type="checkbox"><span>All blinds and curtains open</span></label>
+      <label class="master-item"><input type="checkbox"><span>Beds made with neutral bedding</span></label>
+      <label class="master-item"><input type="checkbox"><span>Trash and recycling hidden</span></label>
+      <label class="master-item"><input type="checkbox"><span>Pet items out of sight</span></label>
+      <label class="master-item"><input type="checkbox"><span>Lights on, bulbs replaced</span></label>
+      <label class="master-item"><input type="checkbox"><span>Off-limits list sent to agent</span></label>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING QUOTE -->
+<section class="golden-rule" style="padding: 50px 24px;">
+  <div class="container">
+    <p style="font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--white); line-height: 1.6; max-width: 700px; margin: 0 auto;">
+      "The homes that sell fastest and for the most money aren't the biggest or the newest. They're the ones where buyers can imagine their own life unfolding. Packing early gives them that space to dream."
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Early Packing Guide &nbsp;&middot;&nbsp; Pre-Listing Preparation</p>
+  <p class="legal">This guide is a companion to your listing preparation plan. Questions? Reply to any email from our team or call us directly. We're here to make this simple.</p>
+</footer>
+
+</body>
+</html>
